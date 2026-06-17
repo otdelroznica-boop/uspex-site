@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Успех и КО — Бытовая химия оптом, Саратов</title>
+<style>
+:root{--pr:#1a6b8a;--pr-d:#124e66;--ac:#00b4d8;--ac2:#48cae4;--lt:#f0f8ff;--wh:#fff;--tx:#1a2a3a;--mu:#5a7080;--bd:#d0e8f0;--sh:0 4px 20px rgba(0,100,160,.10);--r:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;color:var(--tx);background:#f5f9fc;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+
+/* ── HEADER ── */
+header{background:linear-gradient(135deg,var(--pr-d),var(--pr) 60%,var(--ac));color:#fff;position:sticky;top:0;z-index:900;box-shadow:0 2px 16px rgba(0,0,0,.18)}
+.h-in{max-width:1280px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo-icon{width:44px;height:44px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.logo-icon svg{width:28px;height:28px}
+.logo-text .brand{font-size:20px;font-weight:800;color:#fff}
+.logo-text .tag{font-size:10px;opacity:.8;letter-spacing:.5px;text-transform:uppercase}
+nav{display:flex;gap:4px;margin-left:16px}
+nav a{color:rgba(255,255,255,.9);padding:7px 13px;border-radius:8px;font-size:13px;font-weight:500;transition:background .2s}
+nav a:hover{background:rgba(255,255,255,.15)}
+.h-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.h-phone{color:#fff;font-size:16px;font-weight:700}
+.h-phone span{display:block;font-size:10px;opacity:.7;font-weight:400}
+.btn-icon{width:42px;height:42px;border-radius:50%;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;position:relative;transition:background .2s}
+.btn-icon:hover{background:rgba(255,255,255,.25)}
+.badge{position:absolute;top:-4px;right:-4px;background:#ef4444;color:#fff;font-size:10px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;display:none}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(160deg,var(--pr-d),var(--pr) 50%,#0077a8);color:#fff;padding:64px 24px 72px;text-align:center;position:relative;overflow:hidden}
+.hero::before,.hero::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.04)}
+.hero::before{width:400px;height:400px;top:-80px;right:-60px}
+.hero::after{width:300px;height:300px;bottom:-80px;left:-40px}
+.hero-c{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.hero h1{font-size:40px;font-weight:800;line-height:1.15;margin-bottom:14px}
+.hero h1 span{color:var(--ac2)}
+.hero p{font-size:17px;opacity:.88;margin-bottom:32px;line-height:1.6}
+.badges{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.badge-pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:30px;padding:7px 18px;font-size:12px;font-weight:600}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:30px;font-size:14px;font-weight:700;border:none;transition:all .2s;cursor:pointer}
+.btn-wh{background:#fff;color:var(--pr-d)}
+.btn-wh:hover{background:var(--lt);transform:translateY(-2px)}
+.btn-ol{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+.btn-ol:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.btn-pr{background:var(--pr);color:#fff}
+.btn-pr:hover{background:var(--pr-d)}
+
+/* ── STATS ── */
+.stats{background:#fff;padding:32px 24px;border-bottom:1px solid var(--bd)}
+.stats-g{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:16px}
+.s-num{font-size:34px;font-weight:800;color:var(--pr)}
+.s-lbl{font-size:12px;color:var(--mu);margin-top:3px}
+
+/* ── SECTION ── */
+section{padding:56px 24px}
+.ctr{max-width:1280px;margin:0 auto}
+.sec-hd{text-align:center;margin-bottom:44px}
+.sec-hd h2{font-size:30px;font-weight:800;margin-bottom:6px}
+.sec-hd p{color:var(--mu);font-size:15px}
+.line{width:56px;height:4px;background:linear-gradient(90deg,var(--pr),var(--ac));border-radius:2px;margin:10px auto 0}
+
+/* ── CATEGORIES ── */
+.cats{background:var(--lt)}
+.cat-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.cat-c{background:#fff;border-radius:var(--r);padding:22px 14px;text-align:center;transition:all .25s;box-shadow:var(--sh);border:2px solid transparent;cursor:pointer}
+.cat-c:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,100,160,.15)}
+.cat-c.active{border-color:var(--pr);background:var(--lt)}
+.cat-ic{font-size:36px;margin-bottom:10px}
+.cat-nm{font-size:12px;font-weight:600;line-height:1.4}
+.cat-ct{font-size:11px;color:var(--mu);margin-top:3px}
+
+/* ── FILTERS ── */
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;align-items:center}
+.filter-row label{font-size:13px;font-weight:600;color:var(--mu);margin-right:4px}
+.fbtn{padding:7px 16px;border-radius:20px;border:1.5px solid var(--bd);background:#fff;font-size:12px;font-weight:600;color:var(--tx);transition:all .2s;cursor:pointer}
+.fbtn.on,.fbtn:hover{background:var(--pr);border-color:var(--pr);color:#fff}
+.search-box{padding:9px 16px;border-radius:20px;border:1.5px solid var(--bd);font-size:13px;outline:none;transition:border .2s;width:220px;font-family:inherit}
+.search-box:focus{border-color:var(--ac)}
+
+/* ── PRODUCT GRID ── */
+.prods-sec{background:#fff}
+.prods-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.pc{background:#fff;border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;transition:all .25s;box-shadow:0 2px 8px rgba(0,0,0,.06);display:flex;flex-direction:column}
+.pc:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,100,160,.15);border-color:var(--ac)}
+.pc-img{height:170px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative;cursor:pointer;overflow:hidden}
+.pc-img::after{content:'Подробнее';position:absolute;inset:0;background:rgba(0,0,0,.5);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
+.pc:hover .pc-img::after{opacity:1}
+.pc-cls{position:absolute;top:10px;right:10px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;color:#fff;letter-spacing:.5px}
+.cls-A{background:#059669}.cls-B{background:#0284c7}.cls-C{background:#7c3aed}
+.pc-body{padding:14px;display:flex;flex-direction:column;flex:1}
+.pc-brand{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--ac);margin-bottom:4px}
+.pc-name{font-size:14px;font-weight:600;line-height:1.4;flex:1;cursor:pointer}
+.pc-name:hover{color:var(--pr)}
+.pc-art{font-size:11px;color:var(--mu);margin:6px 0 10px}
+.pc-price-row{border-top:1px solid var(--bd);padding-top:10px;margin-top:auto}
+.pc-lbl{font-size:10px;color:var(--mu);margin-bottom:2px}
+.pc-price{font-size:22px;font-weight:800;color:var(--pr-d)}
+.pc-opt{font-size:11px;color:var(--ac);font-weight:600;margin-top:2px}
+.btn-add{width:100%;margin-top:10px;padding:9px;background:var(--pr);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
+.btn-add:hover{background:var(--pr-d)}
+.btn-add.added{background:#059669}
+
+/* ── CART SIDEBAR ── */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s}
+.cart-overlay.open{opacity:1;pointer-events:all}
+.cart-side{position:fixed;top:0;right:-440px;width:420px;max-width:100vw;height:100vh;background:#fff;z-index:1001;transition:right .3s;display:flex;flex-direction:column;box-shadow:-4px 0 32px rgba(0,0,0,.15)}
+.cart-side.open{right:0}
+.cart-hd{padding:20px 24px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between}
+.cart-hd h3{font-size:18px;font-weight:700}
+.cart-close{width:36px;height:36px;border:none;background:var(--lt);border-radius:50%;font-size:18px;display:flex;align-items:center;justify-content:center}
+.cart-items{flex:1;overflow-y:auto;padding:16px 24px}
+.cart-empty{text-align:center;padding:60px 0;color:var(--mu)}
+.cart-empty .ic{font-size:56px;margin-bottom:16px}
+.ci{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--bd);align-items:center}
+.ci-img{width:60px;height:60px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+.ci-info{flex:1;min-width:0}
+.ci-name{font-size:13px;font-weight:600;line-height:1.3;margin-bottom:4px}
+.ci-brand{font-size:11px;color:var(--mu)}
+.ci-right{text-align:right;flex-shrink:0}
+.ci-price{font-size:15px;font-weight:800;color:var(--pr-d)}
+.qty-ctrl{display:flex;align-items:center;gap:8px;margin-top:6px;justify-content:flex-end}
+.qty-btn{width:26px;height:26px;border:1.5px solid var(--bd);background:#fff;border-radius:6px;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.qty-btn:hover{border-color:var(--pr);color:var(--pr)}
+.qty-val{font-size:13px;font-weight:700;min-width:20px;text-align:center}
+.ci-del{color:#ef4444;font-size:11px;border:none;background:none;margin-top:4px;cursor:pointer;display:block;margin-left:auto}
+.cart-ft{padding:20px 24px;border-top:1px solid var(--bd)}
+.cart-total{display:flex;justify-content:space-between;margin-bottom:16px;font-size:16px;font-weight:700}
+.cart-total span:last-child{color:var(--pr-d);font-size:20px}
+.btn-checkout{width:100%;padding:14px;background:var(--pr);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700}
+.btn-checkout:hover{background:var(--pr-d)}
+.btn-clear-cart{width:100%;padding:10px;background:none;border:1.5px solid var(--bd);border-radius:10px;font-size:13px;color:var(--mu);margin-top:8px}
+.btn-clear-cart:hover{border-color:#ef4444;color:#ef4444}
+
+/* ── PRODUCT MODAL ── */
+.modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1100;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal-ov.open{opacity:1;pointer-events:all}
+.modal{background:#fff;border-radius:16px;max-width:780px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;width:38px;height:38px;border:none;background:var(--lt);border-radius:50%;font-size:20px;z-index:10;display:flex;align-items:center;justify-content:center}
+.modal-hero{height:220px;display:flex;align-items:center;justify-content:center;font-size:90px;border-radius:16px 16px 0 0}
+.modal-body{padding:28px 32px}
+.modal-brand{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--ac);margin-bottom:6px}
+.modal-name{font-size:22px;font-weight:800;margin-bottom:8px;line-height:1.3}
+.modal-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.meta-pill{background:var(--lt);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--pr-d)}
+.modal-desc{font-size:14px;line-height:1.7;color:#334155;margin-bottom:24px}
+.modal-section{margin-bottom:20px}
+.modal-section h4{font-size:14px;font-weight:700;color:var(--pr-d);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.modal-section p{font-size:13px;color:var(--mu);line-height:1.7}
+.benefits-list{display:flex;flex-wrap:wrap;gap:8px}
+.ben{background:var(--lt);border:1px solid var(--bd);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--pr-d);display:flex;align-items:center;gap:5px}
+.modal-price-row{display:flex;align-items:center;justify-content:space-between;background:var(--lt);border-radius:12px;padding:20px 24px;margin-top:24px}
+.mp-price{font-size:28px;font-weight:800;color:var(--pr-d)}
+.mp-lbl{font-size:12px;color:var(--mu)}
+.mp-opt{font-size:12px;color:var(--ac);font-weight:600;margin-top:4px}
+.btn-modal-add{padding:14px 32px;background:var(--pr);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700}
+.btn-modal-add:hover{background:var(--pr-d)}
+
+/* ── AUTH MODAL ── */
+.auth-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.auth-ov.open{opacity:1;pointer-events:all}
+.auth-box{background:#fff;border-radius:16px;width:100%;max-width:420px;padding:36px;position:relative}
+.auth-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border:none;background:var(--lt);border-radius:50%;font-size:18px;display:flex;align-items:center;justify-content:center}
+.auth-tabs{display:flex;gap:0;margin-bottom:28px;border-radius:10px;overflow:hidden;border:1.5px solid var(--bd)}
+.auth-tab{flex:1;padding:11px;border:none;background:#fff;font-size:13px;font-weight:700;color:var(--mu);transition:all .2s}
+.auth-tab.on{background:var(--pr);color:#fff}
+.auth-box h3{font-size:22px;font-weight:800;margin-bottom:6px}
+.auth-box p.sub{font-size:13px;color:var(--mu);margin-bottom:24px}
+.inp{width:100%;padding:12px 16px;border:1.5px solid var(--bd);border-radius:8px;font-size:14px;font-family:inherit;outline:none;transition:border .2s;margin-bottom:12px}
+.inp:focus{border-color:var(--ac)}
+.inp-lbl{font-size:12px;font-weight:600;color:var(--mu);margin-bottom:4px;display:block}
+.btn-auth{width:100%;padding:13px;background:var(--pr);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;margin-top:4px}
+.btn-auth:hover{background:var(--pr-d)}
+.auth-err{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:10px 14px;font-size:12px;color:#dc2626;margin-bottom:12px;display:none}
+
+/* ── PROFILE PANEL ── */
+.profile-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s}
+.profile-ov.open{opacity:1;pointer-events:all}
+.profile-side{position:fixed;top:0;right:-480px;width:460px;max-width:100vw;height:100vh;background:#fff;z-index:1001;transition:right .3s;display:flex;flex-direction:column;box-shadow:-4px 0 32px rgba(0,0,0,.15)}
+.profile-side.open{right:0}
+.prof-hd{padding:24px;background:linear-gradient(135deg,var(--pr-d),var(--pr));color:#fff;display:flex;align-items:center;gap:16px}
+.prof-av{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;flex-shrink:0}
+.prof-info h3{font-size:18px;font-weight:700}
+.prof-info p{font-size:13px;opacity:.8}
+.prof-close{margin-left:auto;width:34px;height:34px;border:none;background:rgba(255,255,255,.15);border-radius:50%;color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center}
+.prof-body{flex:1;overflow-y:auto;padding:24px}
+.prof-sec-title{font-size:14px;font-weight:700;color:var(--pr-d);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
+.order-card{background:var(--lt);border-radius:10px;padding:16px;margin-bottom:12px;border:1px solid var(--bd)}
+.oc-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.oc-num{font-size:13px;font-weight:700;color:var(--pr-d)}
+.oc-date{font-size:11px;color:var(--mu)}
+.oc-status{font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px}
+.st-new{background:#dbeafe;color:#1d4ed8}
+.st-proc{background:#fef3c7;color:#d97706}
+.st-done{background:#dcfce7;color:#15803d}
+.oc-items{font-size:12px;color:var(--mu);margin-bottom:8px;line-height:1.6}
+.oc-total{font-size:14px;font-weight:700;color:var(--pr-d)}
+.prof-ft{padding:16px 24px;border-top:1px solid var(--bd)}
+.btn-logout{width:100%;padding:11px;background:none;border:1.5px solid #ef4444;border-radius:8px;color:#ef4444;font-size:13px;font-weight:700}
+.btn-logout:hover{background:#fef2f2}
+
+/* ── CHECKOUT MODAL ── */
+.co-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1300;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.co-ov.open{opacity:1;pointer-events:all}
+.co-box{background:#fff;border-radius:16px;max-width:540px;width:100%;padding:36px;position:relative;max-height:90vh;overflow-y:auto}
+.co-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border:none;background:var(--lt);border-radius:50%;font-size:18px;display:flex;align-items:center;justify-content:center}
+.co-box h3{font-size:22px;font-weight:800;margin-bottom:6px}
+.co-box .sub{font-size:13px;color:var(--mu);margin-bottom:24px}
+.order-summary{background:var(--lt);border-radius:10px;padding:16px;margin-bottom:20px}
+.os-item{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid var(--bd)}
+.os-item:last-child{border:none;font-weight:700;font-size:14px;padding-top:8px}
+.success-box{text-align:center;padding:20px 0}
+.success-ic{font-size:64px;margin-bottom:16px}
+.success-box h4{font-size:20px;font-weight:800;margin-bottom:8px}
+.success-box p{font-size:14px;color:var(--mu);line-height:1.6}
+
+/* ── BRANDS ── */
+.brands-sec{background:var(--lt)}
+.brand-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px}
+.brand-c{background:#fff;border-radius:var(--r);padding:24px 18px;text-align:center;box-shadow:var(--sh)}
+.brand-av{width:72px;height:72px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:#fff}
+.brand-c h3{font-size:15px;font-weight:700;margin-bottom:4px}
+.brand-c p{font-size:12px;color:var(--mu)}
+
+/* ── WHY ── */
+.why-sec{background:#fff}
+.why-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+.why-c{padding:24px;border-radius:var(--r);background:var(--lt);border:1px solid var(--bd)}
+.why-ic{font-size:32px;margin-bottom:12px}
+.why-c h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.why-c p{font-size:13px;color:var(--mu);line-height:1.6}
+
+/* ── STEPS ── */
+.steps-sec{background:linear-gradient(135deg,var(--pr-d),var(--pr));color:#fff}
+.steps-sec .sec-hd h2,.steps-sec .sec-hd p{color:#fff}
+.steps-sec .sec-hd p{opacity:.7}
+.steps-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-top:44px}
+.step{text-align:center;padding:20px}
+.step-n{width:56px;height:56px;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;margin:0 auto 14px}
+.step h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.step p{font-size:12px;opacity:.75}
+
+/* ── CONTACTS ── */
+.cont-sec{background:var(--lt)}
+.cont-g{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.cont-c{background:#fff;border-radius:var(--r);padding:28px;box-shadow:var(--sh)}
+.cont-c h3{font-size:18px;font-weight:700;margin-bottom:20px;color:var(--pr-d)}
+.ci-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px}
+.ci-ic{font-size:20px;flex-shrink:0;margin-top:2px}
+.ci-lbl{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.4px}
+.ci-val{font-size:14px;font-weight:600}
+.ci-val a{color:var(--pr)}
+.msng-row{display:flex;gap:10px;margin-top:16px}
+.msng-btn{flex:1;padding:11px;border-radius:8px;color:#fff;font-size:13px;font-weight:700;text-align:center;border:none;cursor:pointer}
+.msng-wa{background:#25D366}.msng-tg{background:#2AABEE}
+.form-c{display:flex;flex-direction:column;gap:12px}
+.form-c select,.form-c textarea{width:100%;padding:12px 16px;border:1.5px solid var(--bd);border-radius:8px;font-size:13px;font-family:inherit;outline:none;transition:border .2s;color:var(--tx)}
+.form-c select:focus,.form-c textarea:focus,.form-c input:focus{border-color:var(--ac)}
+.form-c textarea{resize:vertical;min-height:90px}
+.form-c button{padding:13px;background:var(--pr);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700}
+.form-c button:hover{background:var(--pr-d)}
+
+/* ── PRICE DL ── */
+.price-dl{background:linear-gradient(135deg,#0077a8,var(--ac));color:#fff;padding:44px 24px;text-align:center}
+.price-dl h2{font-size:26px;font-weight:800;margin-bottom:10px}
+.price-dl p{opacity:.85;margin-bottom:24px}
+
+/* ── FOOTER ── */
+footer{background:#0d2b3a;color:rgba(255,255,255,.65);padding:44px 24px 20px}
+.ft-g{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:36px;margin-bottom:36px}
+.ft-brand .bn{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+.ft-brand p{font-size:12px;line-height:1.7}
+.ft-col h4{color:#fff;font-size:13px;font-weight:700;margin-bottom:12px}
+.ft-col ul{list-style:none}
+.ft-col li{margin-bottom:7px}
+.ft-col a{color:rgba(255,255,255,.55);font-size:12px}
+.ft-col a:hover{color:var(--ac2)}
+.ft-bot{max-width:1280px;margin:0 auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:11px}
+
+/* ── FLOAT ── */
+.float-btns{position:fixed;bottom:28px;right:28px;display:flex;flex-direction:column;gap:10px;z-index:800}
+.fb{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 16px rgba(0,0,0,.25);border:none;cursor:pointer;transition:transform .2s;text-decoration:none}
+.fb:hover{transform:scale(1.1)}
+.fb-wa{background:#25D366}.fb-tg{background:#2AABEE}.fb-ph{background:var(--pr)}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:#1e293b;color:#fff;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:600;z-index:2000;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── HIDDEN / NO-RESULTS ── */
+.pc.hidden{display:none}
+.no-results{text-align:center;padding:60px;color:var(--mu);width:100%;grid-column:1/-1}
+
+@media(max-width:768px){
+  .stats-g{grid-template-columns:repeat(2,1fr)}
+  .cont-g{grid-template-columns:1fr}
+  .ft-g{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:26px}
+  nav{display:none}
+  .h-phone{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- FLOAT BUTTONS -->
+<div class="float-btns">
+  <a href="https://wa.me/79000000000" class="fb fb-wa" title="WhatsApp">💬</a>
+  <a href="https://t.me/uspexiko" class="fb fb-tg" title="Telegram">✈️</a>
+  <a href="tel:+79000000000" class="fb fb-ph" title="Позвонить">📞</a>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="h-in">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 28 28" fill="none">
+          <path d="M14 2L26 9V19L14 26L2 19V9L14 2Z" fill="#1a6b8a"/>
+          <path d="M8 14L12 18L20 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="brand">Успех и КО</div>
+        <div class="tag">Чистота с умом · Саратов</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#cats">Категории</a>
+      <a href="#prods">Каталог</a>
+      <a href="#brands">Бренды</a>
+      <a href="#why">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="h-right">
+      <div class="h-phone"><a href="tel:+79000000000" style="color:#fff">+7 (900) 000-00-00</a><span>Пн–Пт 9:00–18:00</span></div>
+      <button class="btn-icon" onclick="openAuth()" id="btnUser" title="Войти">👤</button>
+      <button class="btn-icon" onclick="openCart()" title="Корзина">
+        🛒<span class="badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-c">
+    <h1>Оптовые поставки<br><span>бытовой химии и гигиены</span></h1>
+    <p>Kalyon, Remaple, Master FRESH, BELUX и ещё 10+ брендов в одном прайсе.<br>Работаем с магазинами и дистрибьюторами по всей Саратовской области.</p>
+    <div class="badges">
+      <span class="badge-pill">✅ Опт от 300 тыс./мес</span>
+      <span class="badge-pill">🚚 Доставка по области</span>
+      <span class="badge-pill">📄 Работаем с НДС</span>
+      <span class="badge-pill">🏆 200+ позиций</span>
+    </div>
+    <div class="btns">
+      <a href="#contacts" class="btn btn-wh">📋 Запросить прайс</a>
+      <a href="#prods" class="btn btn-ol">🛍 Смотреть каталог</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stats">
+  <div class="stats-g">
+    <div><div class="s-num">200+</div><div class="s-lbl">позиций в каталоге</div></div>
+    <div><div class="s-num">12</div><div class="s-lbl">брендов-партнёров</div></div>
+    <div><div class="s-num">15+</div><div class="s-lbl">категорий товаров</div></div>
+    <div><div class="s-num">2</div><div class="s-lbl">банка (Сбер, Совком)</div></div>
+  </div>
+</div>
+
+<!-- ── CATEGORIES ── -->
+<section class="cats" id="cats">
+  <div class="ctr">
+    <div class="sec-hd"><h2>Категории товаров</h2><p>Всё для чистоты дома, стирки и личной гигиены</p><div class="line"></div></div>
+    <div class="cat-g" id="catGrid"></div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ── -->
+<section class="prods-sec" id="prods">
+  <div class="ctr">
+    <div class="sec-hd"><h2>Каталог товаров</h2><p>Актуальные цены · Опт по договорённости</p><div class="line"></div></div>
+    <div class="filter-row">
+      <label>Бренд:</label>
+      <button class="fbtn on" data-brand="all">Все</button>
+      <button class="fbtn" data-brand="Kalyon">Kalyon</button>
+      <button class="fbtn" data-brand="Remaple">Remaple</button>
+      <button class="fbtn" data-brand="Master FRESH">Master FRESH</button>
+      <button class="fbtn" data-brand="BELUX">BELUX</button>
+      <span style="margin-left:auto"><input class="search-box" id="searchBox" placeholder="🔍 Поиск по каталогу..."></span>
+    </div>
+    <div class="prods-g" id="prodsGrid"></div>
+  </div>
+</section>
+
+<!-- ── BRANDS ── -->
+<section class="brands-sec" id="brands">
+  <div class="ctr">
+    <div class="sec-hd"><h2>Наши бренды</h2><p>Проверенные производители, прямые поставки</p><div class="line"></div></div>
+    <div class="brand-g">
+      <div class="brand-c"><div class="brand-av" style="background:linear-gradient(135deg,#1a6b8a,#00b4d8)">K</div><h3>Kalyon</h3><p>Турция. Широкий ассортимент: стирка, уход, чистка. 80+ позиций.</p></div>
+      <div class="brand-c"><div class="brand-av" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">R</div><h3>Remaple</h3><p>Россия. Порошки, кондиционеры, спреи, средства для посуды.</p></div>
+      <div class="brand-c"><div class="brand-av" style="background:linear-gradient(135deg,#059669,#10b981)">MF</div><h3>Master FRESH</h3><p>Губки, мешки для мусора, фольга, ролики. Хиты продаж.</p></div>
+      <div class="brand-c"><div class="brand-av" style="background:linear-gradient(135deg,#dc2626,#f87171)">B</div><h3>BELUX</h3><p>Туалетная бумага и бумажные полотенца. Аромат-серия.</p></div>
+      <div class="brand-c"><div class="brand-av" style="background:linear-gradient(135deg,#d97706,#fbbf24)">DC</div><h3>Dental Clinic 2080</h3><p>Корейские зубные пасты. Тройная мята, ледяная свежесть.</p></div>
+      <div class="brand-c"><div class="brand-av" style="background:linear-gradient(135deg,#0284c7,#38bdf8)">ES</div><h3>Emily Style</h3><p>Ватные палочки, гигиенические прокладки.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY ── -->
+<section class="why-sec" id="why">
+  <div class="ctr">
+    <div class="sec-hd"><h2>Почему выбирают нас</h2><p>ООО «Успех и КО» — надёжный партнёр для вашего бизнеса</p><div class="line"></div></div>
+    <div class="why-g">
+      <div class="why-c"><div class="why-ic">💰</div><h3>Выгодные цены</h3><p>Оптовые условия при объёме от 300 тыс. руб./мес. Индивидуальные скидки для постоянных клиентов.</p></div>
+      <div class="why-c"><div class="why-ic">📋</div><h3>Официальный документооборот</h3><p>Работаем на УСН и ОСНО. Два расчётных счёта: Сбербанк и Совкомбанк.</p></div>
+      <div class="why-c"><div class="why-ic">🏷️</div><h3>200+ позиций</h3><p>Весь ассортимент в одном прайсе. Стирка, гигиена, уход, уборка, посуда.</p></div>
+      <div class="why-c"><div class="why-ic">⚡</div><h3>Быстрое оформление</h3><p>Связь в WhatsApp и Telegram. Выставляем счёт в день обращения.</p></div>
+      <div class="why-c"><div class="why-ic">🤝</div><h3>Индивидуальный подход</h3><p>Подберём ассортимент под формат вашего магазина. Поможем с выкладкой.</p></div>
+      <div class="why-c"><div class="why-ic">📦</div><h3>Классы ликвидности</h3><p>Делим товары по скорости продаж (A/B/C) — помогает правильно формировать заказ.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STEPS ── -->
+<section class="steps-sec">
+  <div class="ctr">
+    <div class="sec-hd"><h2>Как оформить заказ</h2><p>Всего 4 простых шага</p><div class="line"></div></div>
+    <div class="steps-g">
+      <div class="step"><div class="step-n">1</div><h3>Свяжитесь с нами</h3><p>Позвоните или напишите в WhatsApp / Telegram — ответим в течение часа</p></div>
+      <div class="step"><div class="step-n">2</div><h3>Получите прайс</h3><p>Отправим актуальный прайс-лист с фотографиями и артикулами</p></div>
+      <div class="step"><div class="step-n">3</div><h3>Сформируйте заявку</h3><p>Выберите позиции — выставим счёт с НДС или без в тот же день</p></div>
+      <div class="step"><div class="step-n">4</div><h3>Получите товар</h3><p>Доставка по Саратову и области или самовывоз с нашего склада</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICE DOWNLOAD ── -->
+<div class="price-dl">
+  <div class="ctr">
+    <h2>📄 Актуальный прайс-лист</h2>
+    <p>Полный каталог 200+ позиций с ценами. Обновлён 17.06.2026</p>
+    <div class="btns">
+      <a href="prais/17062026КрупныйРптРозница.pdf" class="btn btn-wh" download>⬇️ Скачать PDF</a>
+      <a href="#contacts" class="btn btn-ol">✉️ Получить на e-mail</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACTS ── -->
+<section class="cont-sec" id="contacts">
+  <div class="ctr">
+    <div class="sec-hd"><h2>Контакты</h2><p>Готовы ответить на вопросы и помочь с подбором ассортимента</p><div class="line"></div></div>
+    <div class="cont-g">
+      <div class="cont-c">
+        <h3>📍 Реквизиты и контакты</h3>
+        <div class="ci-row"><div class="ci-ic">🏢</div><div><div class="ci-lbl">Организация</div><div class="ci-val">ООО «Успех и КО»</div></div></div>
+        <div class="ci-row"><div class="ci-ic">📌</div><div><div class="ci-lbl">Адрес</div><div class="ci-val">412192, Саратовская обл., г. Саратов,<br>с. Сторожевка, ул. Комсомольская, 7А, оф. 2</div></div></div>
+        <div class="ci-row"><div class="ci-ic">✉️</div><div><div class="ci-lbl">E-mail</div><div class="ci-val"><a href="mailto:uspex_ko@mail.ru">uspex_ko@mail.ru</a></div></div></div>
+        <div class="ci-row"><div class="ci-ic">🏦</div><div><div class="ci-lbl">ИНН / КПП</div><div class="ci-val">6432030229 / 643201001</div></div></div>
+        <div class="ci-row"><div class="ci-ic">📋</div><div><div class="ci-lbl">ОГРН</div><div class="ci-val">1266400000943</div></div></div>
+        <div class="msng-row">
+          <button class="msng-btn msng-wa" onclick="window.open('https://wa.me/79000000000')">💬 WhatsApp</button>
+          <button class="msng-btn msng-tg" onclick="window.open('https://t.me/uspexiko')">✈️ Telegram</button>
+        </div>
+      </div>
+      <div class="cont-c">
+        <h3>📨 Оставить заявку</h3>
+        <form class="form-c" onsubmit="submitForm(event)">
+          <input class="inp" type="text" placeholder="Ваше имя / название магазина" required>
+          <input class="inp" type="tel" placeholder="Телефон для связи" required>
+          <input class="inp" type="email" placeholder="E-mail (для прайса)">
+          <select><option value="">Тип запроса...</option><option>Запросить прайс-лист</option><option>Оптовый заказ</option><option>Стать партнёром</option><option>Другое</option></select>
+          <textarea placeholder="Комментарий (что интересует, объёмы, регион)"></textarea>
+          <button type="submit">✉️ Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="ft-g">
+    <div class="ft-brand"><div class="bn">✅ Успех и КО</div><p>Оптовые поставки бытовой химии и товаров личной гигиены по Саратовской области.</p><p style="margin-top:10px;font-style:italic">«Чистота с умом»</p></div>
+    <div class="ft-col"><h4>Каталог</h4><ul><li><a href="#prods">Стиральные порошки</a></li><li><a href="#prods">Кондиционеры</a></li><li><a href="#prods">Средства для посуды</a></li><li><a href="#prods">Влажные салфетки</a></li><li><a href="#prods">Средства для туалета</a></li></ul></div>
+    <div class="ft-col"><h4>Бренды</h4><ul><li><a href="#brands">Kalyon</a></li><li><a href="#brands">Remaple</a></li><li><a href="#brands">Master FRESH</a></li><li><a href="#brands">BELUX</a></li><li><a href="#brands">Dental Clinic 2080</a></li></ul></div>
+    <div class="ft-col"><h4>Контакты</h4><ul><li><a href="mailto:uspex_ko@mail.ru">uspex_ko@mail.ru</a></li><li><a href="#contacts">Саратов, Сторожевка</a></li><li><a href="https://wa.me/79000000000">WhatsApp</a></li><li><a href="https://t.me/uspexiko">Telegram</a></li></ul></div>
+  </div>
+  <div class="ft-bot"><span>© 2026 ООО «Успех и КО» · ИНН 6432030229</span><span>ОКВЭД 46.44.2</span></div>
+</footer>
+
+<!-- ── CART SIDEBAR ── -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-side" id="cartSide">
+  <div class="cart-hd"><h3>🛒 Корзина</h3><button class="cart-close" onclick="closeCart()">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-ft" id="cartFt" style="display:none">
+    <div class="cart-total"><span>Итого:</span><span id="cartTotal">0 ₽</span></div>
+    <button class="btn-checkout" onclick="openCheckout()">Оформить заявку →</button>
+    <button class="btn-clear-cart" onclick="clearCart()">Очистить корзину</button>
+  </div>
+</div>
+
+<!-- ── PRODUCT MODAL ── -->
+<div class="modal-ov" id="modalOv" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <div class="modal-hero" id="modalHero"></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ── AUTH MODAL ── -->
+<div class="auth-ov" id="authOv" onclick="closeAuthOv(event)">
+  <div class="auth-box">
+    <button class="auth-close" onclick="closeAuth()">✕</button>
+    <div class="auth-tabs">
+      <button class="auth-tab on" onclick="switchTab('login')">Войти</button>
+      <button class="auth-tab" onclick="switchTab('reg')">Регистрация</button>
+    </div>
+    <div id="authLogin">
+      <h3>Добро пожаловать!</h3>
+      <p class="sub">Войдите, чтобы отслеживать заказы</p>
+      <div class="auth-err" id="loginErr"></div>
+      <label class="inp-lbl">E-mail</label>
+      <input class="inp" id="loginEmail" type="email" placeholder="your@email.com">
+      <label class="inp-lbl">Пароль</label>
+      <input class="inp" id="loginPass" type="password" placeholder="••••••••">
+      <button class="btn-auth" onclick="doLogin()">Войти</button>
+    </div>
+    <div id="authReg" style="display:none">
+      <h3>Создать аккаунт</h3>
+      <p class="sub">Быстрая регистрация для партнёров</p>
+      <div class="auth-err" id="regErr"></div>
+      <label class="inp-lbl">Имя / Название магазина</label>
+      <input class="inp" id="regName" type="text" placeholder="ИП Иванов / Магазин «Чистюля»">
+      <label class="inp-lbl">E-mail</label>
+      <input class="inp" id="regEmail" type="email" placeholder="your@email.com">
+      <label class="inp-lbl">Телефон</label>
+      <input class="inp" id="regPhone" type="tel" placeholder="+7 (900) 000-00-00">
+      <label class="inp-lbl">Пароль</label>
+      <input class="inp" id="regPass" type="password" placeholder="Минимум 6 символов">
+      <button class="btn-auth" onclick="doRegister()">Зарегистрироваться</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROFILE SIDEBAR ── -->
+<div class="profile-ov" id="profileOv" onclick="closeProfileOv(event)"></div>
+<div class="profile-side" id="profileSide">
+  <div class="prof-hd">
+    <div class="prof-av" id="profAv">?</div>
+    <div class="prof-info"><h3 id="profName">—</h3><p id="profEmail">—</p></div>
+    <button class="prof-close" onclick="closeProfile()">✕</button>
+  </div>
+  <div class="prof-body">
+    <div class="prof-sec-title">📦 Мои заказы</div>
+    <div id="ordersList"></div>
+  </div>
+  <div class="prof-ft"><button class="btn-logout" onclick="doLogout()">Выйти из аккаунта</button></div>
+</div>
+
+<!-- ── CHECKOUT MODAL ── -->
+<div class="co-ov" id="coOv" onclick="closeCoOv(event)">
+  <div class="co-box">
+    <button class="co-close" onclick="closeCo()">✕</button>
+    <div id="coContent"></div>
+  </div>
+</div>
+
+<script src="products.js"></script>
+<script>
+// ── DATA ──
+const CATS = [
+  {id:'stirka',name:'Стиральные порошки и гели',ic:'🧺',count:'6 позиций'},
+  {id:'konditioner',name:'Кондиционеры для белья',ic:'🌸',count:'4 позиции'},
+  {id:'posuda',name:'Средства для посуды',ic:'🍽️',count:'4 позиции'},
+  {id:'salfetki',name:'Влажные салфетки',ic:'💧',count:'4 позиции'},
+  {id:'tualet',name:'Средства для туалета',ic:'🚽',count:'3 позиции'},
+  {id:'steklo',name:'Стеклоочистители',ic:'🪟',count:'3 позиции'},
+  {id:'gubki',name:'Губки и перчатки',ic:'🧽',count:'2 позиции'},
+  {id:'meshki',name:'Мешки для мусора',ic:'🗑️',count:'1 позиция'},
+  {id:'gigiena',name:'Гигиена и уход',ic:'🫧',count:'2 позиции'},
+  {id:'bumaga',name:'Бумажные изделия',ic:'🗞️',count:'1 позиция'},
+];
+
+// ── STATE ──
+let cart = JSON.parse(localStorage.getItem('cart')||'[]');
+let currentUser = JSON.parse(localStorage.getItem('user')||'null');
+let activeCategory = 'all';
+let activeBrand = 'all';
+
+// ── RENDER CATEGORIES ──
+function renderCats(){
+  const g = document.getElementById('catGrid');
+  const allBtn = `<div class="cat-c ${activeCategory==='all'?'active':''}" onclick="filterCat('all')">
+    <div class="cat-ic">📦</div><div class="cat-nm">Все товары</div><div class="cat-ct">${PRODUCTS.length} позиций</div></div>`;
+  g.innerHTML = allBtn + CATS.map(c=>`
+    <div class="cat-c ${activeCategory===c.id?'active':''}" onclick="filterCat('${c.id}')">
+      <div class="cat-ic">${c.ic}</div><div class="cat-nm">${c.name}</div><div class="cat-ct">${c.count}</div>
+    </div>`).join('');
+}
+
+// ── RENDER PRODUCTS ──
+function renderProducts(){
+  const q = (document.getElementById('searchBox').value||'').toLowerCase();
+  const g = document.getElementById('prodsGrid');
+  const filtered = PRODUCTS.filter(p=>{
+    const catOk = activeCategory==='all'||p.category===activeCategory;
+    const brandOk = activeBrand==='all'||p.brand===activeBrand;
+    const qOk = !q || p.name.toLowerCase().includes(q)||p.brand.toLowerCase().includes(q)||(p.tags||[]).some(t=>t.includes(q));
+    return catOk&&brandOk&&qOk;
+  });
+  if(!filtered.length){g.innerHTML='<div class="no-results">🔍 Ничего не найдено. Попробуйте другой запрос.</div>';return;}
+  g.innerHTML = filtered.map(p=>{
+    const inCart = cart.find(i=>i.id===p.id);
+    const grad = `linear-gradient(135deg,${p.colors[0]},${p.colors[1]})`;
+    return `<div class="pc" id="pc-${p.id}">
+      <div class="pc-img" style="background:${grad}" onclick="openModal(${p.id})">
+        ${p.emoji}<span class="pc-cls cls-${p.class}">${p.class}</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-brand">${p.brand}</div>
+        <div class="pc-name" onclick="openModal(${p.id})">${p.name}</div>
+        <div class="pc-art">Арт: ${p.art} · ${p.volume||''} · ${p.country||''}</div>
+        <div class="pc-price-row">
+          <div class="pc-lbl">Розничная цена</div>
+          <div class="pc-price">${p.priceRetail.toLocaleString('ru')} ₽</div>
+          <div class="pc-opt">💼 Оптовая цена — по договорённости</div>
+        </div>
+        <button class="btn-add ${inCart?'added':''}" onclick="addToCart(${p.id})" id="btn-${p.id}">
+          ${inCart?'✅ В корзине':'🛒 Добавить в корзину'}
+        </button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function filterCat(id){
+  activeCategory=id;
+  renderCats();
+  renderProducts();
+  document.getElementById('prods').scrollIntoView({behavior:'smooth'});
+}
+
+// ── BRAND FILTER ──
+document.querySelectorAll('[data-brand]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    activeBrand=btn.dataset.brand;
+    document.querySelectorAll('[data-brand]').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    renderProducts();
+  });
+});
+document.getElementById('searchBox').addEventListener('input',renderProducts);
+
+// ── CART ──
+function saveCart(){localStorage.setItem('cart',JSON.stringify(cart));}
+function updateBadge(){
+  const total=cart.reduce((s,i)=>s+i.qty,0);
+  const b=document.getElementById('cartBadge');
+  b.textContent=total;
+  b.style.display=total>0?'flex':'none';
+}
+
+function addToCart(id){
+  const p=PRODUCTS.find(x=>x.id===id);
+  const ex=cart.find(x=>x.id===id);
+  if(ex){ex.qty++;}else{cart.push({id:p.id,name:p.name,brand:p.brand,emoji:p.emoji,colors:p.colors,price:p.priceRetail,qty:1});}
+  saveCart();updateBadge();
+  const btn=document.getElementById('btn-'+id);
+  if(btn){btn.textContent='✅ В корзине';btn.classList.add('added');}
+  showToast(`${p.emoji} Добавлено в корзину`);
+}
+
+function removeFromCart(id){
+  cart=cart.filter(x=>x.id!==id);
+  saveCart();updateBadge();renderCart();
+  // reset button
+  const btn=document.getElementById('btn-'+id);
+  if(btn){btn.textContent='🛒 Добавить в корзину';btn.classList.remove('added');}
+}
+
+function changeQty(id,delta){
+  const item=cart.find(x=>x.id===id);
+  if(!item)return;
+  item.qty+=delta;
+  if(item.qty<=0){removeFromCart(id);return;}
+  saveCart();updateBadge();renderCart();
+}
+
+function clearCart(){
+  cart=[];saveCart();updateBadge();renderCart();
+  document.querySelectorAll('.btn-add').forEach(b=>{b.textContent='🛒 Добавить в корзину';b.classList.remove('added');});
+}
+
+function renderCart(){
+  const el=document.getElementById('cartItems');
+  const ft=document.getElementById('cartFt');
+  if(!cart.length){
+    el.innerHTML=`<div class="cart-empty"><div class="ic">🛒</div><p>Корзина пуста</p><p style="font-size:12px;margin-top:8px;color:#aaa">Добавьте товары из каталога</p></div>`;
+    ft.style.display='none';return;
+  }
+  ft.style.display='block';
+  el.innerHTML=cart.map(i=>`
+    <div class="ci">
+      <div class="ci-img" style="background:linear-gradient(135deg,${i.colors[0]},${i.colors[1]})">${i.emoji}</div>
+      <div class="ci-info">
+        <div class="ci-name">${i.name}</div>
+        <div class="ci-brand">${i.brand}</div>
+      </div>
+      <div class="ci-right">
+        <div class="ci-price">${(i.price*i.qty).toLocaleString('ru')} ₽</div>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty(${i.id},-1)">−</button>
+          <span class="qty-val">${i.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${i.id},1)">+</button>
+        </div>
+        <button class="ci-del" onclick="removeFromCart(${i.id})">Удалить</button>
+      </div>
+    </div>`).join('');
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('cartTotal').textContent=total.toLocaleString('ru')+' ₽';
+}
+
+function openCart(){document.getElementById('cartOverlay').classList.add('open');document.getElementById('cartSide').classList.add('open');renderCart();}
+function closeCart(){document.getElementById('cartOverlay').classList.remove('open');document.getElementById('cartSide').classList.remove('open');}
+
+// ── PRODUCT MODAL ──
+function openModal(id){
+  const p=PRODUCTS.find(x=>x.id===id);
+  const grad=`linear-gradient(135deg,${p.colors[0]},${p.colors[1]})`;
+  document.getElementById('modalHero').style.background=grad;
+  document.getElementById('modalHero').innerHTML=p.emoji;
+  document.getElementById('modalBody').innerHTML=`
+    <div class="modal-brand">${p.brand}</div>
+    <div class="modal-name">${p.name}</div>
+    <div class="modal-meta">
+      <span class="meta-pill">📦 ${p.volume||''}</span>
+      <span class="meta-pill">🌍 ${p.country||''}</span>
+      <span class="meta-pill">🏷 Класс ${p.class}</span>
+      <span class="meta-pill">Арт: ${p.art}</span>
+    </div>
+    <div class="modal-desc">${p.description}</div>
+    <div class="modal-section">
+      <h4>✅ Преимущества</h4>
+      <div class="benefits-list">${(p.benefits||[]).map(b=>`<span class="ben">✓ ${b}</span>`).join('')}</div>
+    </div>
+    <div class="modal-section">
+      <h4>🧪 Состав</h4>
+      <p>${p.composition||'—'}</p>
+    </div>
+    <div class="modal-section">
+      <h4>📖 Как использовать</h4>
+      <p>${p.howToUse||'—'}</p>
+    </div>
+    <div class="modal-price-row">
+      <div>
+        <div class="mp-lbl">Розничная цена</div>
+        <div class="mp-price">${p.priceRetail.toLocaleString('ru')} ₽</div>
+        <div class="mp-opt">💼 Оптовая цена — по договорённости</div>
+      </div>
+      <button class="btn-modal-add" onclick="addToCart(${p.id});closeModalDirect()">🛒 В корзину</button>
+    </div>`;
+  document.getElementById('modalOv').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(e){if(e.target===document.getElementById('modalOv'))closeModalDirect();}
+function closeModalDirect(){document.getElementById('modalOv').classList.remove('open');document.body.style.overflow='';}
+
+// ── AUTH ──
+function switchTab(t){
+  document.getElementById('authLogin').style.display=t==='login'?'':'none';
+  document.getElementById('authReg').style.display=t==='reg'?'':'none';
+  document.querySelectorAll('.auth-tab').forEach((b,i)=>b.classList.toggle('on',(t==='login'&&i===0)||(t==='reg'&&i===1)));
+}
+function openAuth(){
+  if(currentUser){openProfile();return;}
+  document.getElementById('authOv').classList.add('open');
+}
+function closeAuth(){document.getElementById('authOv').classList.remove('open');}
+function closeAuthOv(e){if(e.target===document.getElementById('authOv'))closeAuth();}
+
+function doLogin(){
+  const email=document.getElementById('loginEmail').value.trim();
+  const pass=document.getElementById('loginPass').value;
+  const err=document.getElementById('loginErr');
+  if(!email||!pass){showAuthErr(err,'Заполните все поля');return;}
+  const users=JSON.parse(localStorage.getItem('users')||'[]');
+  const u=users.find(x=>x.email===email&&x.pass===pass);
+  if(!u){showAuthErr(err,'Неверный e-mail или пароль');return;}
+  currentUser=u;localStorage.setItem('user',JSON.stringify(u));
+  closeAuth();updateUserUI();showToast('👋 Добро пожаловать, '+u.name+'!');
+}
+
+function doRegister(){
+  const name=document.getElementById('regName').value.trim();
+  const email=document.getElementById('regEmail').value.trim();
+  const phone=document.getElementById('regPhone').value.trim();
+  const pass=document.getElementById('regPass').value;
+  const err=document.getElementById('regErr');
+  if(!name||!email||!pass){showAuthErr(err,'Заполните обязательные поля');return;}
+  if(pass.length<6){showAuthErr(err,'Пароль минимум 6 символов');return;}
+  const users=JSON.parse(localStorage.getItem('users')||'[]');
+  if(users.find(x=>x.email===email)){showAuthErr(err,'Этот e-mail уже зарегистрирован');return;}
+  const u={id:Date.now(),name,email,phone,pass,orders:[]};
+  users.push(u);localStorage.setItem('users',JSON.stringify(users));
+  currentUser=u;localStorage.setItem('user',JSON.stringify(u));
+  closeAuth();updateUserUI();showToast('🎉 Аккаунт создан! Добро пожаловать!');
+}
+
+function showAuthErr(el,msg){el.textContent=msg;el.style.display='block';}
+
+function doLogout(){
+  currentUser=null;localStorage.removeItem('user');
+  closeProfile();updateUserUI();showToast('👋 Вы вышли из аккаунта');
+}
+
+function updateUserUI(){
+  const btn=document.getElementById('btnUser');
+  btn.textContent=currentUser?'😊':'👤';
+  btn.title=currentUser?'Личный кабинет':'Войти';
+}
+
+// ── PROFILE ──
+function openProfile(){
+  if(!currentUser)return;
+  document.getElementById('profAv').textContent=currentUser.name[0].toUpperCase();
+  document.getElementById('profName').textContent=currentUser.name;
+  document.getElementById('profEmail').textContent=currentUser.email;
+  renderOrders();
+  document.getElementById('profileOv').classList.add('open');
+  document.getElementById('profileSide').classList.add('open');
+}
+function closeProfile(){document.getElementById('profileOv').classList.remove('open');document.getElementById('profileSide').classList.remove('open');}
+function closeProfileOv(e){if(e.target===document.getElementById('profileOv'))closeProfile();}
+
+function renderOrders(){
+  const el=document.getElementById('ordersList');
+  const orders=currentUser.orders||[];
+  if(!orders.length){el.innerHTML='<p style="font-size:13px;color:#aaa;text-align:center;padding:20px 0">Заказов пока нет.<br>Добавьте товары в корзину и оформите заявку.</p>';return;}
+  el.innerHTML=orders.slice().reverse().map(o=>{
+    const statusMap={new:'Новый',processing:'В обработке',done:'Выполнен'};
+    const statusCls={new:'st-new',processing:'st-proc',done:'st-done'};
+    return `<div class="order-card">
+      <div class="oc-hd"><span class="oc-num">Заказ #${o.id}</span><span class="oc-date">${o.date}</span><span class="oc-status ${statusCls[o.status]||'st-new'}">${statusMap[o.status]||'Новый'}</span></div>
+      <div class="oc-items">${o.items.map(i=>`${i.emoji} ${i.name} × ${i.qty}`).join('<br>')}</div>
+      <div class="oc-total">Итого: ${o.total.toLocaleString('ru')} ₽</div>
+    </div>`;
+  }).join('');
+}
+
+// ── CHECKOUT ──
+function openCheckout(){
+  if(!cart.length)return;
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const needLogin=!currentUser;
+  const itemsHtml=cart.map(i=>`<div class="os-item"><span>${i.emoji} ${i.name} × ${i.qty}</span><span>${(i.price*i.qty).toLocaleString('ru')} ₽</span></div>`).join('');
+  document.getElementById('coContent').innerHTML=`
+    <h3>📋 Оформление заявки</h3>
+    <p class="sub">Мы свяжемся с вами для уточнения деталей доставки и оптовой цены</p>
+    <div class="order-summary">${itemsHtml}<div class="os-item"><span>Итого:</span><span>${total.toLocaleString('ru')} ₽</span></div></div>
+    ${needLogin?`<p style="font-size:13px;color:var(--mu);margin-bottom:14px">Войдите, чтобы сохранить заказ в личном кабинете:</p>`:''}
+    <input class="inp" id="coName" type="text" placeholder="Имя / Название магазина *" value="${currentUser?currentUser.name:''}" ${currentUser?'readonly':''}>
+    <input class="inp" id="coPhone" type="tel" placeholder="Телефон *" style="margin-top:10px" value="${currentUser?currentUser.phone||'':''}">
+    <input class="inp" id="coEmail" type="email" placeholder="E-mail" style="margin-top:10px" value="${currentUser?currentUser.email:''}">
+    <textarea class="inp" id="coComment" placeholder="Комментарий (адрес доставки, пожелания...)" style="margin-top:10px;min-height:70px;resize:vertical"></textarea>
+    <button class="btn-auth" style="margin-top:14px" onclick="submitOrder()">✅ Отправить заявку</button>`;
+  document.getElementById('coOv').classList.add('open');
+  closeCart();
+}
+
+function submitOrder(){
+  const name=document.getElementById('coName').value.trim();
+  const phone=document.getElementById('coPhone').value.trim();
+  if(!name||!phone){showToast('❗ Укажите имя и телефон');return;}
+  const orderId=Math.floor(100000+Math.random()*900000);
+  const date=new Date().toLocaleDateString('ru',{day:'2-digit',month:'2-digit',year:'numeric'});
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const order={id:orderId,date,status:'new',items:[...cart],total,name,phone};
+  if(currentUser){
+    currentUser.orders=currentUser.orders||[];
+    currentUser.orders.push(order);
+    localStorage.setItem('user',JSON.stringify(currentUser));
+    const users=JSON.parse(localStorage.getItem('users')||'[]');
+    const idx=users.findIndex(u=>u.id===currentUser.id);
+    if(idx>=0){users[idx]=currentUser;localStorage.setItem('users',JSON.stringify(users));}
+  }
+  document.getElementById('coContent').innerHTML=`
+    <div class="success-box">
+      <div class="success-ic">🎉</div>
+      <h4>Заявка принята!</h4>
+      <p>Номер заявки: <strong>#${orderId}</strong><br><br>Мы свяжемся с вами в течение 2 часов по телефону <strong>${phone}</strong> для подтверждения заказа и уточнения оптовой цены.<br><br>Также вы можете написать нам в WhatsApp или Telegram.</p>
+      <div style="display:flex;gap:10px;margin-top:20px;justify-content:center">
+        <a href="https://wa.me/79000000000" style="padding:12px 20px;background:#25D366;color:#fff;border-radius:8px;font-weight:700;font-size:13px">💬 WhatsApp</a>
+        <a href="https://t.me/uspexiko" style="padding:12px 20px;background:#2AABEE;color:#fff;border-radius:8px;font-weight:700;font-size:13px">✈️ Telegram</a>
+      </div>
+    </div>`;
+  clearCart();
+}
+
+function closeCo(){document.getElementById('coOv').classList.remove('open');}
+function closeCoOv(e){if(e.target===document.getElementById('coOv'))closeCo();}
+
+// ── CONTACTS FORM ──
+function submitForm(e){e.preventDefault();showToast('✅ Заявка отправлена! Свяжемся в течение часа.');}
+
+// ── TOAST ──
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+// ── SMOOTH SCROLL ──
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+
+// ── INIT ──
+renderCats();
+renderProducts();
+updateBadge();
+updateUserUI();
+</script>
+</body>
+</html>
