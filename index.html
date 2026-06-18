@@ -286,6 +286,49 @@ footer{background:#0d2b3a;color:rgba(255,255,255,.65);padding:44px 24px 20px}
 .fb:hover{transform:scale(1.1)}
 .fb-wa{background:#25D366}.fb-tg{background:#2AABEE}.fb-ph{background:var(--pr)}
 
+/* ── CHAT WIDGET ── */
+.chat-fab{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--pr),var(--ac));display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 20px rgba(0,100,160,.4);border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;animation:pulse-chat 2.5s infinite}
+.chat-fab:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(0,100,160,.55)}
+@keyframes pulse-chat{0%,100%{box-shadow:0 4px 20px rgba(0,100,160,.4)}50%{box-shadow:0 4px 28px rgba(0,180,216,.7)}}
+.chat-panel{position:fixed;bottom:100px;right:28px;width:360px;max-height:560px;background:#fff;border-radius:20px;box-shadow:0 12px 48px rgba(0,0,0,.18);display:flex;flex-direction:column;z-index:1500;opacity:0;transform:translateY(20px) scale(.95);pointer-events:none;transition:opacity .25s,transform .25s}
+.chat-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+.chat-head{background:linear-gradient(135deg,var(--pr-d),var(--ac));color:#fff;padding:16px 18px;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:12px}
+.chat-head-av{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.chat-head-info{flex:1}
+.chat-head-name{font-weight:700;font-size:15px}
+.chat-head-sub{font-size:11px;opacity:.85}
+.chat-online{width:8px;height:8px;border-radius:50%;background:#4ade80;display:inline-block;margin-right:4px}
+.chat-close{background:none;border:none;color:#fff;font-size:20px;cursor:pointer;opacity:.8;padding:0}
+.chat-close:hover{opacity:1}
+.chat-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:0}
+.chat-msgs::-webkit-scrollbar{width:4px}.chat-msgs::-webkit-scrollbar-thumb{background:#d0e8f0;border-radius:4px}
+.msg{max-width:82%;padding:10px 13px;border-radius:16px;font-size:13.5px;line-height:1.5;animation:msgIn .2s ease}
+@keyframes msgIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.msg-bot{background:var(--lt);color:var(--tx);border-bottom-left-radius:4px;align-self:flex-start}
+.msg-user{background:linear-gradient(135deg,var(--pr),var(--ac));color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg-typing{background:var(--lt);padding:12px 16px;border-radius:16px;border-bottom-left-radius:4px;align-self:flex-start}
+.typing-dots{display:flex;gap:5px}.typing-dots span{width:7px;height:7px;border-radius:50%;background:#aac4d0;animation:dot .9s infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,80%,100%{transform:scale(1)}40%{transform:scale(1.4);background:var(--ac)}}
+.chat-products{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.chat-pcard{background:#fff;border:1.5px solid var(--bd);border-radius:12px;padding:9px 11px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.chat-pcard:hover{border-color:var(--ac);box-shadow:0 2px 10px rgba(0,180,216,.15)}
+.chat-pcard img{width:44px;height:44px;object-fit:contain;border-radius:8px;background:#f8f9fa;flex-shrink:0}
+.chat-pcard-info{flex:1;min-width:0}
+.chat-pcard-name{font-size:12px;font-weight:600;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat-pcard-price{font-size:11px;color:var(--ac);font-weight:700}
+.chat-pcard-add{background:var(--pr);color:#fff;border:none;border-radius:8px;padding:5px 10px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.chat-pcard-add:hover{background:var(--pr-d)}
+.chat-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chat-chip{background:var(--lt);border:1.5px solid var(--bd);color:var(--pr);padding:5px 11px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;transition:background .15s,border-color .15s}
+.chat-chip:hover{background:var(--ac);border-color:var(--ac);color:#fff}
+.chat-input-row{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--bd)}
+.chat-input{flex:1;border:1.5px solid var(--bd);border-radius:12px;padding:9px 13px;font-size:13px;font-family:inherit;outline:none;transition:border-color .2s;resize:none}
+.chat-input:focus{border-color:var(--ac)}
+.chat-send{background:linear-gradient(135deg,var(--pr),var(--ac));color:#fff;border:none;border-radius:12px;width:40px;height:40px;font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .2s;flex-shrink:0}
+.chat-send:hover{opacity:.85}
+@media(max-width:768px){.chat-panel{width:calc(100vw - 24px);right:12px;bottom:90px}}
+
 /* ── TOAST ── */
 .toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:#1e293b;color:#fff;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:600;z-index:2000;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -311,9 +354,28 @@ footer{background:#0d2b3a;color:rgba(255,255,255,.65);padding:44px 24px 20px}
 
 <!-- FLOAT BUTTONS -->
 <div class="float-btns">
+  <button class="fb chat-fab" onclick="toggleChat()" id="chatFab" title="Помощник">🤖</button>
   <a href="https://wa.me/79000000000" class="fb fb-wa" title="WhatsApp">💬</a>
   <a href="https://t.me/uspexiko" class="fb fb-tg" title="Telegram">✈️</a>
   <a href="tel:+79000000000" class="fb fb-ph" title="Позвонить">📞</a>
+</div>
+
+<!-- CHAT PANEL -->
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <div class="chat-head-av">🤖</div>
+    <div class="chat-head-info">
+      <div class="chat-head-name">Помощник Успех и КО</div>
+      <div class="chat-head-sub"><span class="chat-online"></span>Онлайн · Знаю весь каталог</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs"></div>
+  <div class="chat-input-row">
+    <input class="chat-input" id="chatInput" placeholder="Напишите что ищете..." maxlength="200"
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}">
+    <button class="chat-send" onclick="sendChat()">➤</button>
+  </div>
 </div>
 
 <!-- ── HEADER ── -->
@@ -946,6 +1008,278 @@ renderCats();
 renderProducts();
 updateBadge();
 updateUserUI();
+
+// ══════════════════════════════════════════════
+// CHAT ASSISTANT
+// ══════════════════════════════════════════════
+let chatOpen = false;
+let chatHistory = [];
+let chatWaiting = false;
+let pendingProducts = []; // last shown products for "добавь первый" etc.
+
+const CAT_LABELS = {
+  stirka:'стирка',bumaga:'бумажные изделия',konditsioner:'кондиционеры',
+  posuda:'посуда',salfetki:'влажные салфетки',tualet:'туалет',
+  steklo:'стеклоочистители',gubki:'губки',meshki:'мешки',
+  gigiena:'гигиена',clean:'чистка',other:'другое'
+};
+
+const GREETINGS = ['привет','здравствуй','здравствуйте','добрый','хай','hello','помогите','помоги'];
+const ADD_WORDS = ['добавь','добавить','купить','куплю','хочу','возьму','положи','закажи','закажу','в корзину','возьми'];
+const THANKS = ['спасибо','благодарю','спс','thanks','отлично','супер','класс','хорошо','понятно','окей'];
+const PRICE_WORDS = ['цена','цены','цену','стоимость','сколько стоит','почём'];
+const DELIVERY_WORDS = ['доставк','доставить','привезти','привезёт','привезет'];
+const PAYMENT_WORDS = ['оплат','оплатить','платить','банк','перевод','наличн','безнал'];
+const MIN_ORDER_WORDS = ['минимальн','от скольк','от какой суммы','от какого'];
+const CATALOG_WORDS = ['каталог','прайс','список','ассортимент','что есть','что продаёт','что продает'];
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('chatPanel').classList.toggle('open', chatOpen);
+  if (chatOpen && chatHistory.length === 0) initChat();
+  if (chatOpen) setTimeout(()=>document.getElementById('chatInput').focus(), 300);
+}
+
+function initChat() {
+  botMsg('Привет! 👋 Я помощник магазина **Успех и КО**.\n\nПомогу найти нужный товар, расскажу о ценах и добавлю в корзину. Что вас интересует?',
+    chips(['🧺 Стиральные порошки','🍽 Средства для посуды','🪥 Гигиена','🧻 Туалетная бумага','💧 Влажные салфетки','📋 Весь каталог'])
+  );
+}
+
+function botMsg(text, extra = '') {
+  const msgs = document.getElementById('chatMsgs');
+  const div = document.createElement('div');
+  div.className = 'msg msg-bot';
+  div.innerHTML = mdLight(text) + extra;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  chatHistory.push({role:'bot', text});
+}
+
+function userMsg(text) {
+  const msgs = document.getElementById('chatMsgs');
+  const div = document.createElement('div');
+  div.className = 'msg msg-user';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  chatHistory.push({role:'user', text});
+}
+
+function showTyping() {
+  const msgs = document.getElementById('chatMsgs');
+  const div = document.createElement('div');
+  div.className = 'msg msg-typing';
+  div.id = 'typing';
+  div.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function hideTyping() {
+  const t = document.getElementById('typing');
+  if (t) t.remove();
+}
+
+function chips(labels) {
+  return '<div class="chat-chips">' +
+    labels.map(l => `<span class="chat-chip" onclick="handleChip('${l.replace(/'/g,"\\'")}' )">${l}</span>`).join('') +
+    '</div>';
+}
+
+function productCards(products) {
+  pendingProducts = products;
+  return '<div class="chat-products">' +
+    products.slice(0,5).map(p =>
+      `<div class="chat-pcard">
+        <img src="${p.img||''}" alt="${p.name}" onerror="this.style.display='none'">
+        <div class="chat-pcard-info">
+          <div class="chat-pcard-name">${p.name}</div>
+          <div class="chat-pcard-price">${p.priceRetail.toLocaleString('ru')} ₽</div>
+        </div>
+        <button class="chat-pcard-add" onclick="chatAddToCart(${p.id})">+ В корзину</button>
+      </div>`
+    ).join('') +
+  '</div>';
+}
+
+function chatAddToCart(id) {
+  addToCart(id);
+  const p = PRODUCTS.find(x=>x.id===id);
+  botMsg(`✅ **${p.name}** добавлен в корзину!\n\nХотите ещё что-нибудь?`,
+    chips(['Продолжить выбор','🛒 Открыть корзину','Нет, спасибо'])
+  );
+}
+
+function mdLight(text) {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+}
+
+function handleChip(label) {
+  sendChat(label);
+}
+
+function sendChat(override) {
+  if (chatWaiting) return;
+  const input = document.getElementById('chatInput');
+  const text = (override || input.value).trim();
+  if (!text) return;
+  input.value = '';
+  userMsg(text);
+  chatWaiting = true;
+  showTyping();
+  setTimeout(() => { hideTyping(); processMessage(text.toLowerCase()); chatWaiting = false; }, 600);
+}
+
+function processMessage(q) {
+  // Открыть корзину
+  if (q.includes('открыть корзину') || q.includes('корзину') && q.includes('открыть')) {
+    openCart(); botMsg('Открываю корзину! 🛒'); return;
+  }
+  // Благодарность
+  if (THANKS.some(w=>q.includes(w))) {
+    botMsg('Рад помочь! 😊 Если ещё что-то нужно — пишите.',
+      chips(['Найти товар','🛒 Открыть корзину'])); return;
+  }
+  // Нет, спасибо
+  if (q.includes('нет') && (q.includes('спасибо')||q.includes('не надо')||q.includes('всё'))) {
+    botMsg('Хорошо! Если понадоблюсь — всегда здесь. 👋'); return;
+  }
+  // Каталог целиком
+  if (CATALOG_WORDS.some(w=>q.includes(w))) {
+    document.getElementById('prods').scrollIntoView({behavior:'smooth'});
+    botMsg(`В нашем каталоге **${PRODUCTS.length} товаров** — прокрутите страницу вниз, чтобы посмотреть всё. Или уточните что ищете, помогу найти быстрее! 👇`,
+      chips(['🧺 Порошки и гели','🍽 Посуда','🪥 Гигиена','💧 Влажные салфетки'])); return;
+  }
+  // Доставка
+  if (DELIVERY_WORDS.some(w=>q.includes(w))) {
+    botMsg('🚚 **Доставка по Саратовской области**\n\nРаботаем с магазинами и дистрибьюторами. Условия доставки и минимальная партия обсуждаются индивидуально.\n\nДля уточнения свяжитесь с нами:',
+      chips(['💬 WhatsApp','✈️ Telegram','📞 Позвонить'])); return;
+  }
+  // Оплата
+  if (PAYMENT_WORDS.some(w=>q.includes(w))) {
+    botMsg('💳 **Оплата**\n\nПринимаем:\n• Безналичный расчёт (Сбер, Совком)\n• Наличные\n• Перевод на расчётный счёт\n\nДля юр. лиц работаем по договору с НДС.',
+      chips(['Узнать про доставку','Связаться с нами'])); return;
+  }
+  // Минимальный заказ
+  if (MIN_ORDER_WORDS.some(w=>q.includes(w))) {
+    botMsg('📦 **Минимальный заказ** — от **300 000 ₽** в месяц для оптовых клиентов.\n\nУсловия обсуждаются индивидуально. Свяжитесь с нами для уточнения деталей.',
+      chips(['💬 WhatsApp','✈️ Telegram'])); return;
+  }
+  // Связаться
+  if (q.includes('whatsapp') || q.includes('ватсап') || q.includes('вацап')) {
+    window.open('https://wa.me/79000000000'); botMsg('Открываю WhatsApp! 💬'); return;
+  }
+  if (q.includes('telegram') || q.includes('телеграм')) {
+    window.open('https://t.me/uspexiko'); botMsg('Открываю Telegram! ✈️'); return;
+  }
+  if (q.includes('позвонить') || q.includes('телефон') || q.includes('номер')) {
+    botMsg('📞 Наш номер: **+7 (900) 000-00-00**\n\nПн–Пт 9:00–18:00'); return;
+  }
+  // Кнопки категорий
+  if (q.includes('стиральн') || q.includes('порошок') || q.includes('порошк') || q.includes('гель для стирк')) {
+    return showCategory('stirka', 'стиральных порошков и гелей');
+  }
+  if (q.includes('посуд') || q.includes('тарелк')) {
+    return showCategory('posuda', 'средств для посуды');
+  }
+  if (q.includes('кондиционер') || q.includes('ополаскивател')) {
+    return showCategory('konditsioner', 'кондиционеров для белья');
+  }
+  if (q.includes('влажн') || q.includes('салфетк')) {
+    return showCategory('salfetki', 'влажных салфеток');
+  }
+  if (q.includes('туалет') && !q.includes('бумаг')) {
+    return showCategory('tualet', 'средств для туалета');
+  }
+  if (q.includes('туалетн') && q.includes('бумаг') || q.includes('бумажн') || q.includes('полотенц')) {
+    return showCategory('bumaga', 'бумажных изделий');
+  }
+  if (q.includes('стекл') || q.includes('окн')) {
+    return showCategory('steklo', 'стеклоочистителей');
+  }
+  if (q.includes('губк') || q.includes('мочалк')) {
+    return showCategory('gubki', 'губок');
+  }
+  if (q.includes('мешк') || q.includes('пакет') || q.includes('мусор')) {
+    return showCategory('meshki', 'мешков для мусора');
+  }
+  if (q.includes('гигиен') || q.includes('зубн') || q.includes('щётк') || q.includes('дезодорант') || q.includes('прокладк') || q.includes('ватн')) {
+    return showCategory('gigiena', 'товаров гигиены');
+  }
+  // Добавить N-й товар из последнего списка
+  if (ADD_WORDS.some(w=>q.includes(w))) {
+    const nums = {'первый':0,'первую':0,'1':0,'второй':1,'вторую':1,'2':1,'третий':2,'третью':2,'3':2,'четвёртый':3,'4':3,'пятый':4,'5':4};
+    for (const [word, idx] of Object.entries(nums)) {
+      if (q.includes(word) && pendingProducts[idx]) {
+        chatAddToCart(pendingProducts[idx].id); return;
+      }
+    }
+    // Поиск по названию рядом с "добавь"
+    const found = searchProducts(q.replace(/добавь|добавить|купить|положи|корзину|хочу|возьму/g,'').trim());
+    if (found.length === 1) { chatAddToCart(found[0].id); return; }
+    if (found.length > 1) {
+      botMsg(`Нашёл несколько вариантов — какой добавить?`, productCards(found)); return;
+    }
+    if (pendingProducts.length) {
+      botMsg('Какой товар добавить? Напишите название или нажмите кнопку под нужным товаром.',
+        productCards(pendingProducts)); return;
+    }
+    botMsg('Что именно добавить в корзину? Напишите название товара или категорию.'); return;
+  }
+  // Поиск по тексту
+  const found = searchProducts(q);
+  if (found.length === 0) {
+    botMsg(`Не нашёл **«${q}»** в каталоге. Попробуйте другое слово или выберите категорию:`,
+      chips(['🧺 Порошки','🍽 Посуда','💧 Влажные салфетки','🪥 Гигиена','🧻 Бумага','Весь каталог'])); return;
+  }
+  if (found.length === 1) {
+    const p = found[0];
+    botMsg(`Нашёл! **${p.brand} ${p.name}** — ${p.priceRetail.toLocaleString('ru')} ₽\n\n${p.description||''}`,
+      productCards([p]) + chips(['Добавить в корзину','Найти ещё','🛒 Открыть корзину'])); return;
+  }
+  botMsg(`Нашёл **${found.length}** товаров по вашему запросу:`, productCards(found) +
+    (found.length > 5 ? chips(['Показать все в каталоге']) : '')); return;
+}
+
+function showCategory(catId, label) {
+  const items = PRODUCTS.filter(p => p.category === catId);
+  if (!items.length) { botMsg('В этой категории пока нет товаров.'); return; }
+  botMsg(`Вот наши **${label}** (${items.length} позиций):`, productCards(items) +
+    chips(['Добавить первый','Добавить второй','Показать всю категорию']));
+}
+
+function searchProducts(q) {
+  if (!q || q.length < 2) return [];
+  const words = q.toLowerCase().split(/\s+/).filter(w=>w.length>1);
+  return PRODUCTS.filter(p => {
+    const hay = (p.name+' '+p.brand+' '+(p.tags||[]).join(' ')).toLowerCase();
+    return words.every(w => hay.includes(w));
+  }).slice(0, 8);
+}
+
+// Chip "Показать всю категорию" → прокрутить каталог
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('chat-chip')) return;
+  const chip = e.target.closest('.chat-chip');
+  if (chip) handleChip(chip.textContent);
+});
+
+// Переопределяем handleChip для кнопок связи
+const _handleChip = handleChip;
+window.handleChip = function(label) {
+  const l = label.toLowerCase();
+  if (l.includes('whatsapp') || l.includes('ватсап')) { window.open('https://wa.me/79000000000'); return; }
+  if (l.includes('telegram') || l.includes('телеграм')) { window.open('https://t.me/uspexiko'); return; }
+  if (l.includes('позвонить')) { window.location.href='tel:+79000000000'; return; }
+  if (l.includes('показать всю категорию') || l.includes('весь каталог') || l.includes('показать все')) {
+    document.getElementById('prods').scrollIntoView({behavior:'smooth'}); return;
+  }
+  if (l.includes('открыть корзину')) { openCart(); return; }
+  sendChat(label);
+};
 </script>
 </body>
 </html>
