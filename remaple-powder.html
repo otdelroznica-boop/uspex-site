@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remaple — Стиральный порошок</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  background: #d4dce0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 16px;
+  min-height: 100vh;
+}
+
+.page {
+  width: 794px;
+  background: #fff;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: #0f3d2e;
+  display: flex;
+  align-items: stretch;
+  min-height: 310px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-left {
+  flex: 1;
+  padding: 36px 36px 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.brand-badge {
+  background: #1fac77;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  letter-spacing: 1px;
+}
+
+.turkey-flag {
+  background: #cc0000;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.hero-headline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero-headline em {
+  color: #f5c842;
+  font-style: normal;
+}
+
+.hero-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.55;
+  max-width: 340px;
+  margin-bottom: 22px;
+}
+
+.hero-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.pill-gold {
+  background: #f5c842;
+  border-color: #f5c842;
+  color: #2a1a00;
+}
+
+.hero-right {
+  width: 290px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 20px;
+  position: relative;
+}
+
+/* decorative circle behind product */
+.hero-right::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(31, 172, 119, 0.18);
+  bottom: -40px;
+  right: -20px;
+}
+
+.hero-img {
+  width: 220px;
+  height: 260px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.45));
+}
+
+/* ─── GOLD STRIP ─── */
+.gold-strip {
+  background: #f5c842;
+  padding: 8px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gold-strip-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  color: #2a1a00;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gold-strip-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(42,26,0,0.3);
+}
+
+/* ─── BENEFITS ─── */
+.benefits {
+  display: flex;
+  background: #f7faf8;
+  border-bottom: 2px solid #e0ece6;
+}
+
+.ben-item {
+  flex: 1;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-right: 1px solid #e0ece6;
+}
+
+.ben-item:last-child { border-right: none; }
+
+.ben-icon {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.ben-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11.5px;
+  color: #0f3d2e;
+  margin-bottom: 3px;
+}
+
+.ben-desc {
+  font-size: 10px;
+  color: #6a8a78;
+  line-height: 1.4;
+}
+
+/* ─── SECTION TITLE ─── */
+.sec {
+  background: #1a7a58;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sec-line {
+  width: 3px;
+  height: 16px;
+  background: #f5c842;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.sec-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #fff;
+}
+
+/* ─── PRODUCTS ─── */
+.products {
+  display: flex;
+  border-bottom: 2px solid #e0ece6;
+}
+
+.size-col {
+  flex: 1;
+  border-right: 1px solid #e0ece6;
+}
+
+.size-col:last-child { border-right: none; }
+
+.size-header {
+  background: #eaf5ef;
+  padding: 8px 12px;
+  text-align: center;
+  border-bottom: 1px solid #e0ece6;
+}
+
+.size-header strong {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  color: #0f3d2e;
+}
+
+.size-header span {
+  font-size: 10px;
+  color: #6a8a78;
+  display: block;
+}
+
+.variants {
+  display: flex;
+  flex-direction: column;
+}
+
+.variant {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid #f0f5f2;
+  gap: 8px;
+}
+
+.variant:last-child { border-bottom: none; }
+
+.var-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  background: #f7faf8;
+  border-radius: 7px;
+  flex-shrink: 0;
+}
+
+.var-info { flex: 1; }
+
+.var-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1a2a1a;
+  margin-bottom: 2px;
+}
+
+.var-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-lav { background: #ede8f8; color: #5a35a0; }
+.tag-ind { background: #e0edf8; color: #1a5a9a; }
+.tag-cot { background: #f0f8e8; color: #3a7a1a; }
+
+.var-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: #0f3d2e;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.var-price small {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+  color: #aaa;
+  white-space: nowrap;
+}
+
+/* ─── HOW TO USE ─── */
+.howto {
+  display: flex;
+  background: #f7faf8;
+  border-bottom: 2px solid #e0ece6;
+}
+
+.howto-item {
+  flex: 1;
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-right: 1px solid #e0ece6;
+}
+
+.howto-item:last-child { border-right: none; }
+
+.howto-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1a7a58;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.howto-text strong {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f3d2e;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.howto-text span {
+  font-size: 10px;
+  color: #6a8a78;
+  line-height: 1.4;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: #0f3d2e;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.foot-brand {
+  color: #fff;
+}
+
+.foot-brand strong {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 12.5px;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.foot-brand span {
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+}
+
+.foot-contacts {
+  display: flex;
+  gap: 20px;
+}
+
+.fc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+}
+
+.fc-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.fc-info strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.fc-info small {
+  font-size: 9.5px;
+  color: rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+
+@media print {
+  body { background: #fff; padding: 0; }
+  .page { width: 210mm; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="brand-row">
+        <div class="brand-badge">REMAPLE</div>
+        <div class="turkey-flag">🇹🇷 Турция</div>
+      </div>
+      <div class="hero-headline">
+        Стирает<br>лучше.<br><em>Стоит дешевле.</em>
+      </div>
+      <div class="hero-sub">
+        Стиральный порошок класса A из Турции. Активная формула отстирывает въевшиеся пятна с первого раза — без лишних усилий.
+      </div>
+      <div class="hero-pills">
+        <span class="pill pill-gold">⭐ Класс A</span>
+        <span class="pill">Для авто и ручной стирки</span>
+        <span class="pill">3 аромата</span>
+        <span class="pill">3 кг · 6 кг · 9 кг</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img class="hero-img"
+        src="img/remaple_powderdetergentt.420-1-1000x1000.png"
+        alt="Remaple стиральный порошок">
+    </div>
+  </div>
+
+  <!-- GOLD STRIP -->
+  <div class="gold-strip">
+    <div class="gold-strip-text">Оптовые поставки по Саратовской области</div>
+    <div class="gold-strip-dots">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="gold-strip-text">Прямые поставки · Цена ниже рынка на 25–30%</div>
+  </div>
+
+  <!-- BENEFITS -->
+  <div class="benefits">
+    <div class="ben-item">
+      <div class="ben-icon">🎯</div>
+      <div class="ben-title">Отстирывает с 1 раза</div>
+      <div class="ben-desc">Активные ферменты разрушают загрязнения даже при 30°C</div>
+    </div>
+    <div class="ben-item">
+      <div class="ben-icon">🌸</div>
+      <div class="ben-title">Стойкий аромат</div>
+      <div class="ben-desc">Лаванда, Индиго или Хлопок — свежесть сохраняется до 72 часов</div>
+    </div>
+    <div class="ben-item">
+      <div class="ben-icon">🌿</div>
+      <div class="ben-title">Бережно к ткани</div>
+      <div class="ben-desc">Не разрушает волокна, сохраняет цвет и форму вещей</div>
+    </div>
+    <div class="ben-item">
+      <div class="ben-icon">💧</div>
+      <div class="ben-title">Легко смывается</div>
+      <div class="ben-desc">Не оставляет белых разводов на тёмных вещах</div>
+    </div>
+    <div class="ben-item">
+      <div class="ben-icon">♻️</div>
+      <div class="ben-title">Биоразлагаемо</div>
+      <div class="ben-desc">Состав безопасен для окружающей среды и кожи рук</div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="sec">
+    <div class="sec-line"></div>
+    <div class="sec-label">Линейка продуктов — выберите свой объём</div>
+  </div>
+
+  <div class="products">
+    <!-- 3 кг -->
+    <div class="size-col">
+      <div class="size-header">
+        <strong>3 кг</strong>
+        <span>≈ 40–60 стирок</span>
+      </div>
+      <div class="variants">
+        <div class="variant">
+          <img class="var-img" src="img/remaple_powderdetergentt.420-1-1000x1000.png" alt="Лаванда 3кг">
+          <div class="var-info">
+            <div class="var-name">Стиральный порошок</div>
+            <span class="var-tag tag-lav">🌸 Лаванда</span>
+          </div>
+          <div class="var-price">495 ₽<small>Опт по договорённости</small></div>
+        </div>
+        <div class="variant">
+          <img class="var-img" src="img/remaple_powderdetergentt.419-1-1000x1000.png" alt="Индиго 3кг">
+          <div class="var-info">
+            <div class="var-name">Стиральный порошок</div>
+            <span class="var-tag tag-ind">💙 Индиго</span>
+          </div>
+          <div class="var-price">495 ₽<small>Опт по договорённости</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 кг -->
+    <div class="size-col">
+      <div class="size-header">
+        <strong>6 кг</strong>
+        <span>≈ 80–120 стирок</span>
+      </div>
+      <div class="variants">
+        <div class="variant">
+          <img class="var-img" src="img/remaple_powderdetergentt.415-1-1000x1000.png" alt="Лаванда 6кг">
+          <div class="var-info">
+            <div class="var-name">Стиральный порошок</div>
+            <span class="var-tag tag-lav">🌸 Лаванда</span>
+          </div>
+          <div class="var-price">935 ₽<small>Опт по договорённости</small></div>
+        </div>
+        <div class="variant">
+          <img class="var-img" src="img/remaple_powderdetergentt.416-1-1000x1000.png" alt="Индиго 6кг">
+          <div class="var-info">
+            <div class="var-name">Стиральный порошок</div>
+            <span class="var-tag tag-ind">💙 Индиго</span>
+          </div>
+          <div class="var-price">935 ₽<small>Опт по договорённости</small></div>
+        </div>
+        <div class="variant">
+          <img class="var-img" src="img/remaple_powderdetergentt.417-1-1000x1000.png" alt="Хлопок 6кг">
+          <div class="var-info">
+            <div class="var-name">Стиральный порошок</div>
+            <span class="var-tag tag-cot">🌿 Хлопок</span>
+          </div>
+          <div class="var-price">990 ₽<small>Опт по договорённости</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 кг -->
+    <div class="size-col">
+      <div class="size-header">
+        <strong>9 кг</strong>
+        <span>≈ 120–180 стирок</span>
+      </div>
+      <div class="variants">
+        <div class="variant">
+          <img class="var-img" src="img/remaple_powderdetergentt.422-1-1000x1000.png" alt="Лаванда 9кг">
+          <div class="var-info">
+            <div class="var-name">Стиральный порошок</div>
+            <span class="var-tag tag-lav">🌸 Лаванда</span>
+          </div>
+          <div class="var-price">1 320 ₽<small>Опт по договорённости</small></div>
+        </div>
+        <div class="variant">
+          <img class="var-img" src="img/remaple_powderdetergentt.423-1-1000x1000.png" alt="Индиго 9кг">
+          <div class="var-info">
+            <div class="var-name">Стиральный порошок</div>
+            <span class="var-tag tag-ind">💙 Индиго</span>
+          </div>
+          <div class="var-price">1 320 ₽<small>Опт по договорённости</small></div>
+        </div>
+        <div class="variant">
+          <img class="var-img" src="img/remaple_powderdetergentt.421-1-1000x1000.png" alt="Хлопок 9кг">
+          <div class="var-info">
+            <div class="var-name">Стиральный порошок</div>
+            <span class="var-tag tag-cot">🌿 Хлопок</span>
+          </div>
+          <div class="var-price">1 320 ₽<small>Опт по договорённости</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW TO USE -->
+  <div class="sec">
+    <div class="sec-line"></div>
+    <div class="sec-label">Как использовать</div>
+  </div>
+
+  <div class="howto">
+    <div class="howto-item">
+      <div class="howto-num">1</div>
+      <div class="howto-text">
+        <strong>Отмерьте дозу</strong>
+        <span>60–80 г на полную загрузку (≈5 кг белья)</span>
+      </div>
+    </div>
+    <div class="howto-item">
+      <div class="howto-num">2</div>
+      <div class="howto-text">
+        <strong>Засыпьте в лоток</strong>
+        <span>В отсек для основного стирального средства машины</span>
+      </div>
+    </div>
+    <div class="howto-item">
+      <div class="howto-num">3</div>
+      <div class="howto-text">
+        <strong>Выберите режим</strong>
+        <span>30–95°C — подходит для любой температуры стирки</span>
+      </div>
+    </div>
+    <div class="howto-item">
+      <div class="howto-num">4</div>
+      <div class="howto-text">
+        <strong>Наслаждайтесь</strong>
+        <span>Чистые вещи с устойчивым ароматом свежести</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="foot-brand">
+      <strong>ООО «Успех и КО» — официальный дистрибьютор Remaple</strong>
+      <span>Оптовые поставки · Договор с НДС · Саратовская область</span>
+    </div>
+    <div class="foot-contacts">
+      <div class="fc">
+        <div class="fc-icon">📞</div>
+        <div class="fc-info">
+          <strong>+7 (900) 000-00-00</strong>
+          <small>Пн–Пт 9:00–18:00</small>
+        </div>
+      </div>
+      <div class="fc">
+        <div class="fc-icon">💬</div>
+        <div class="fc-info">
+          <strong>WhatsApp / Telegram</strong>
+          <small>otdelroznica@gmail.com</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
