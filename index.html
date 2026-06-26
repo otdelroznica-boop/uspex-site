@@ -96,6 +96,9 @@ section{padding:56px 24px}
 .pc-name{font-size:14px;font-weight:600;line-height:1.4;flex:1;cursor:pointer}
 .pc-name:hover{color:var(--pr)}
 .pc-art{font-size:11px;color:var(--mu);margin:6px 0 10px}
+.pc-stock{font-size:12px;font-weight:700;margin:0 0 8px;display:inline-block;padding:2px 8px;border-radius:6px}
+.pc-stock.in{color:#0a7d33;background:rgba(16,160,64,.1)}
+.pc-stock.out{color:#b00;background:rgba(200,0,0,.08)}
 .pc-price-row{border-top:1px solid var(--bd);padding-top:10px;margin-top:auto}
 .pc-lbl{font-size:10px;color:var(--mu);margin-bottom:2px}
 .pc-price{font-size:22px;font-weight:800;color:var(--pr-d)}
@@ -700,6 +703,7 @@ function renderProducts(){
         <div class="pc-brand">${p.brand}</div>
         <div class="pc-name" onclick="openModal(${p.id})">${p.name}</div>
         <div class="pc-art">${p.art?'Арт: '+p.art+' · ':''}${p.volume||''}</div>
+        ${stockHtml(p)}
         <div class="pc-price-row">
           <div class="pc-lbl">Розничная цена</div>
           <div class="pc-price">${p.priceRetail.toLocaleString('ru')} ₽</div>
@@ -1003,11 +1007,85 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
+// ── ОСТАТКИ / ЖИВЫЕ ЦЕНЫ ИЗ 1С ──
+// Показ остатка в карточке. p.stock приходит из prices.json (выгрузка 1С).
+function stockHtml(p){
+  if(p.stock===undefined||p.stock===null) return '';        // нет данных из 1С — ничего не показываем
+  if(p.stock>0) return `<div class="pc-stock in">✓ В наличии: ${p.stock} шт</div>`;
+  return `<div class="pc-stock out">Нет в наличии</div>`;
+}
+
+// Ручная связка для товаров, у которых артикул на сайте не совпадает с 1С
+// (артикул сайта → точное наименование товара в 1С). В основном Remaple.
+const CODE_MAP = {
+ "RM-GEL":"Remaple Жидкий стиральный порошок гель 2л",
+ "RM-COND-LAV":"Remaple Концентрат ополаскиватель 1,5 л Лаванда",
+ "RM-COND-SAK":"Remaple Концентрат ополаскиватель 1,5 л Сакура",
+ "RM-COND-COT":"Remaple Концентрат ополаскиватель 1,5 л Хлопок",
+ "MFGB35-15R":"Master FRESH пакеты д/мусора 35л/15шт с завязк. MFGB35-15R мастер фреш",
+ "MFGB35-30R":"Master FRESH пакеты д/мусора 35л/30шт с завязк-ушками MFGB35-15R мастер фреш 61",
+ "RM-BATH":"Remaple Спрей для ванны 750 мл",
+ "RM-KIREC":"Remaple Средство от известкового налета и ржавчины 1 л",
+ "RM-DISH-LIM":"Remaple Жидкость для мытья посуды 750 мл Лимон",
+ "RM-DISH-MNG":"Remaple Жидкость для мытья посуды 750 мл Манго",
+ "RM-DISH-OKN":"Remaple Жидкость для мытья посуды 750 мл Океан",
+ "RM-DISH-APL":"Remaple Жидкость для мытья посуды 750 мл яблоко",
+ "RM-DISH-BUB":"Remaple Жидкость для мытья посуды 750 мл Ягоды (Bubble Gum)",
+ "RM-BLOK-LAV":"Remaple Блоки для туалета 2*50 гр Лаванда",
+ "RM-BLOK-LIM":"Remaple Блоки для туалета 2*50 гр Лимон",
+ "RM-BLOK-OKN":"Remaple Блоки для туалета 2*50 гр Океан",
+ "RM-POW-IND3":"Remaple Стиральный порошок 3кг Индиго",
+ "RM-POW-LAV3":"Remaple Стиральный порошок 3кг Лаванда",
+ "RM-POW-IND6":"Remaple Стиральный порошок 6кг Индиго",
+ "RM-POW-LAV6":"Remaple Стиральный порошок 6кг Лаванда",
+ "RM-POW-COT6":"Remaple Стиральный порошок 6кг Хлопок",
+ "RM-POW-IND9":"Remaple Стиральный порошок 9кг Индиго",
+ "RM-POW-LAV9":"Remaple Стиральный порошок 9кг Лаванда",
+ "RM-POW-COT9":"Remaple Стиральный порошок 9кг Хлопок",
+ "RM-ASPIREX":"Remaple Спрей Универсальный 'Aspirex' 750 мл",
+ "RM-KIT":"Remaple Спрей для кухни 750 мл"
+};
+
+// Загружаем актуальные цены/остатки из prices.json (его обновляет обработка 1С → GitHub).
+function loadLivePrices(){
+  fetch('prices.json?t='+Date.now())
+    .then(r=>r.ok?r.json():Promise.reject(r.status))
+    .then(data=>{
+      const byArt={}, byName={};
+      data.forEach(x=>{
+        const a=(x.article||'').trim().toLowerCase(); if(a) byArt[a]={price:x.price,stock:x.stock};
+        byName[(x.name||'').trim().toLowerCase()]={price:x.price,stock:x.stock};
+      });
+      let matched=0;
+      PRODUCTS.forEach(p=>{
+        const a=(p.art||'').trim().toLowerCase();
+        if(!a) return;
+        let rec=byArt[a];                                        // 1) точное совпадение по артикулу
+        if(!rec){                                                // 2) артикул сайта встречается в названии 1С (однозначно)
+          const cand=data.filter(x=>x.name.toLowerCase().includes(a));
+          if(cand.length===1) rec={price:cand[0].price,stock:cand[0].stock};
+        }
+        if(!rec && CODE_MAP[p.art]){                             // 3) ручная связка по наименованию 1С
+          rec=byName[CODE_MAP[p.art].trim().toLowerCase()];
+        }
+        if(rec){
+          if(typeof rec.price==='number'&&rec.price>0) p.priceRetail=rec.price;
+          p.stock=rec.stock;
+          matched++;
+        }
+      });
+      console.log('[1С] Подтянуто товаров:',matched,'из',data.length);
+      renderProducts();
+    })
+    .catch(e=>console.warn('[1С] prices.json не загружен:',e)); // тихо — сайт работает на статичных ценах
+}
+
 // ── INIT ──
 renderCats();
 renderProducts();
 updateBadge();
 updateUserUI();
+loadLivePrices();
 
 // ══════════════════════════════════════════════
 // CHAT ASSISTANT
