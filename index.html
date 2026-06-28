@@ -747,7 +747,7 @@ function updateBadge(){
 function addToCart(id){
   const p=PRODUCTS.find(x=>x.id===id);
   const ex=cart.find(x=>x.id===id);
-  if(ex){ex.qty++;}else{cart.push({id:p.id,name:p.name,brand:p.brand,img:p.img,emoji:p.emoji||'🧴',price:p.priceRetail,qty:1});}
+  if(ex){ex.qty++;}else{cart.push({id:p.id,art:p.art||'',name:p.name,brand:p.brand,img:p.img,emoji:p.emoji||'🧴',price:p.priceRetail,qty:1});}
   saveCart();updateBadge();
   const btn=document.getElementById('btn-'+id);
   if(btn){btn.textContent='✅ В корзине';btn.classList.add('added');}
