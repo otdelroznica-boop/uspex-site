@@ -747,7 +747,7 @@ function updateBadge(){
 function addToCart(id){
   const p=PRODUCTS.find(x=>x.id===id);
   const ex=cart.find(x=>x.id===id);
-  if(ex){ex.qty++;}else{cart.push({id:p.id,art:p.art||'',name:p.name,brand:p.brand,img:p.img,emoji:p.emoji||'🧴',price:p.priceRetail,qty:1});}
+  if(ex){ex.qty++;}else{cart.push({id:p.id,art:p.art||'',n1c:p.n1c||'',name:p.name,brand:p.brand,img:p.img,emoji:p.emoji||'🧴',price:p.priceRetail,qty:1});}
   saveCart();updateBadge();
   const btn=document.getElementById('btn-'+id);
   if(btn){btn.textContent='✅ В корзине';btn.classList.add('added');}
@@ -1073,8 +1073,9 @@ function loadLivePrices(){
     .then(data=>{
       const byArt={}, byName={};
       data.forEach(x=>{
-        const a=(x.article||'').trim().toLowerCase(); if(a) byArt[a]={price:x.price,stock:x.stock};
-        byName[(x.name||'').trim().toLowerCase()]={price:x.price,stock:x.stock};
+        const rec={price:x.price,stock:x.stock,n1c:x.name};      // n1c — точное имя в 1С
+        const a=(x.article||'').trim().toLowerCase(); if(a) byArt[a]=rec;
+        byName[(x.name||'').trim().toLowerCase()]=rec;
       });
       let matched=0;
       PRODUCTS.forEach(p=>{
@@ -1083,7 +1084,7 @@ function loadLivePrices(){
         let rec=byArt[a];                                        // 1) точное совпадение по артикулу
         if(!rec){                                                // 2) артикул сайта встречается в названии 1С (однозначно)
           const cand=data.filter(x=>x.name.toLowerCase().includes(a));
-          if(cand.length===1) rec={price:cand[0].price,stock:cand[0].stock};
+          if(cand.length===1) rec={price:cand[0].price,stock:cand[0].stock,n1c:cand[0].name};
         }
         if(!rec && CODE_MAP[p.art]){                             // 3) ручная связка по наименованию 1С
           rec=byName[CODE_MAP[p.art].trim().toLowerCase()];
@@ -1091,6 +1092,7 @@ function loadLivePrices(){
         if(rec){
           if(typeof rec.price==='number'&&rec.price>0) p.priceRetail=rec.price;
           p.stock=rec.stock;
+          p.n1c=rec.n1c;                                         // запоминаем имя в 1С для заявки
           matched++;
         }
       });
