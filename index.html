@@ -751,7 +751,7 @@ function addToCart(id){
   saveCart();updateBadge();
   const btn=document.getElementById('btn-'+id);
   if(btn){btn.textContent='✅ В корзине';btn.classList.add('added');}
-  showToast(`${p.emoji} Добавлено в корзину`);
+  showToast(`${p.emoji||'🛒'} ${p.name} — в корзине`);
 }
 
 function removeFromCart(id){
